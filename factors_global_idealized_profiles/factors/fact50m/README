@@ -1,0 +1,8 @@
+The data inside this folder is the amplification factor from 50m waterdepth.
+
+Each file contains a list of amplification factors (2nd column) for a given set of wave periodes (1st column, given in seconds). You may interpolate between known values to find the amplification factor for a given wave periode.
+
+The file profiles.jpg shows the 7 different profiles.
+
+The name of the data files: p[1-7] is which profile the data is for, and neg/pos is for leading depression (which we decided to use in the project) and leading preak.
+
