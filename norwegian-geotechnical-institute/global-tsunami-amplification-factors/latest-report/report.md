@@ -1,5 +1,5 @@
 % Statistics for norwegian-geotechnical-institute/global-tsunami-amplification-factors
-% Generated for [norwegian-geotechnical-institute/global-tsunami-amplification-factors](https://github.com/norwegian-geotechnical-institute/global-tsunami-amplification-factors) with [jgehrcke/github-repo-stats](https://github.com/jgehrcke/github-repo-stats) at 2024-02-27 15:12 UTC.
+% Generated for [norwegian-geotechnical-institute/global-tsunami-amplification-factors](https://github.com/norwegian-geotechnical-institute/global-tsunami-amplification-factors) with [jgehrcke/github-repo-stats](https://github.com/jgehrcke/github-repo-stats) at 2024-02-27 15:18 UTC.
 
 
 ## Views
