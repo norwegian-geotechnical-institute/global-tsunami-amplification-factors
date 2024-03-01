@@ -1,5 +1,0 @@
-This folder contains resultsfiles and plots for totally 9 domains worldwide where the amplification method is applied.
-
-The data files res-* have a heading explaining the content. "no" is for each domain a running number inside each of the nine domains, "lon,lat" is the location and "profile" represents the bathy at the gauge, chosen to be the closest of the 7 profiles used in the method (see plots of these profiles in fact50m and fact100m).
-
-To each area you find also a corresponding plot showing the gauges/extention of the domains.
