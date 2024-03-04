@@ -1,7 +1,7 @@
 # global-tsunami-amplification-factors
 Global tsunami amplification factors used for estimation of tsunami run-up, based on wave input from offshore mariograms. By extracting the height of the heighest wave from a given mariogram, you will find a proper amplification factor for estimate the tsunami run-up based on the shape (leading trough - negative polarity named "neg" og leading peak - positive polarity "pos") and the wave periode (120-3600s). See documentation in the paper Glimsdal_etal_ampfactos_paper.pdf.
 
-In the file global_ampf_v01.txt there is a collection of  amplification factors at totally xxxxx points globally. The amplification factors are produced based on wave simulations along transects on local bathymetry. Each line of the file contain all information for a given point of the form:
+In the file global_ampf_v01.txt there is a collection of  amplification factors at totally 12634 points globally. The amplification factors are produced based on wave simulations along transects on local bathymetry. Each line of the file contain all information for a given point of the form:
 
 globalid lon lat neg af120 af200 af300 af600 af1000 af1800 af3600 pos af120 af200 af300 af600 af1000 af1800 af3600 prof name area prev
 
