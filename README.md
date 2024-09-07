@@ -7,4 +7,6 @@ globalid lon lat neg af120 af200 af300 af600 af1000 af1800 af3600 pos af120 af20
 
 where "globalid" is a unique identification for each point, "lon" and "lat" is the location in geographical coordinates. If the wave signal in the mariogram is having a leading trough (negative polarity), the values "af120"-"af3600" (depending on the wave period in seconds) after the flag "neg" must be used. For a leading peak (positive polarity) the values follows after the flag "pos". The amplification factors are a combination of simulation along transects based on idealized and real bathymetry indicated by the column "prof". To extract points for a region, there is a possibility search by filtering areas specified in the column "areas". 
 
+The file global_ampf_v02.txt contains new points (areas missing in v02 including many islands). Totally 19142 points, while global_ampf_v03.txt contain points moved from dry land into sea (338 points) and removed points not connected to land (1207 points). Points not connected to a segment (Aristotle) is not removed. Totally 17841 points.
+
 Release v2.0.0 of the global tsunami amplification factors is permanently archived on Zenodo with DOI https://doi.org/10.5281/zenodo.10732728
