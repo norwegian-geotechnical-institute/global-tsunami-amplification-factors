@@ -10,3 +10,9 @@ where "globalid" is a unique identification for each point, "lon" and "lat" is t
 The file global_ampf_v02.txt contains new points (areas missing in v02 including many islands). Totally 19142 points, while global_ampf_v03.txt contain points moved from dry land into sea (338 points) and removed points not connected to land (1207 points). Points not connected to a segment (Aristotle) is not removed. Totally 17841 points.
 
 Release v2.0.1 of the global tsunami amplification factors is permanently archived on Zenodo with DOI https://zenodo.org/doi/10.5281/zenodo.10732727
+
+AmpFact is one of the services included in the GEO-INQUIRE Virtual Access to the next generation of software as a service (VA4-532-2).
+(see https://www.geo-inquire.eu/virtual-access/software for details.)
+ 
+![GEO-INQUIRE project logo](Geo-INQUIRE_logo_small.png)
+
