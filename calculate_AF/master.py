@@ -15,7 +15,7 @@ except:
     sys.exit()
 
 
-mainfolder="/home/sgl/projects/tsunami-ampfact-software/calculate_AF"
+mainfolder="/home/sgl/projects/global-tsunami-amplification-factors/calculate_AF"
 #put your profiels here:
 profiles_folder=os.path.join(mainfolder,"profiles")
 #name pattern of filenames (profiles)
@@ -29,7 +29,7 @@ periodes=[120,200,300,600,1000,1800,3600]
 outfolder=os.path.join(mainfolder,"sim")
 eps=0.5  #min height in meters of wave to be counted for (initial height is 1 m, so eps<1.0)
 
-ampf_depth=50    #depth in meters at offshore gauge 
+ampf_depth=99    #depth in meters at offshore gauge 
 #ampf_depth="end"  #use this flag if you will use the outermost point of profile (deep end) 
 #ampf_depth="ext_end" #outermost point of profile included added extention with constant depth
 
@@ -85,12 +85,12 @@ for id in range(int(idstart),int(idslutt)+1):
     #
     ####################################################
     
-    #try:
-    problem,count=bibl.run(id,ampf_depth,periodes,id,prof,outfolder,count,problem,nosim,eps,unitpulse)  
-    #except:
-    #    cmd="id "+str(id)+": Problem with running the model (problem with profile?)"
-    #    problem.append(cmd)
-    #    print("count - after",count)
+    try:
+        problem,count=bibl.run(id,ampf_depth,periodes,id,prof,outfolder,count,problem,nosim,eps,unitpulse)  
+    except:
+        cmd="id "+str(id)+": Problem with running the model (problem with profile?)"
+        problem.append(cmd)
+        print("count - after",count)
 
     CPUhpt=time.time()-CPUhpt
     file=open("CPU-%.2fs" %(CPUhpt),'w')
