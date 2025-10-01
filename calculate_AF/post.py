@@ -9,7 +9,7 @@ import numpy as np
 ##########################################################
 ##########################################################
 
-simdir="/home/sgl/projects/global-tsunami-amplification-factors/calculate_AF/sim"
+simdir="/home/sylfest/projects/global-tsunami-amplification-factors/calculate_AF/sim"
 
 ##########################################################
 ##########################################################
@@ -19,7 +19,7 @@ dirs=[]
 
 pattern=r"([0-9]+)"
 
-infofile = "/home/sgl/projects/global-tsunami-amplification-factors/calculate_AF/location.txt"
+infofile = "/home/sylfest/projects/global-tsunami-amplification-factors/calculate_AF/location.txt"
 factorsfile="factors_all"
 
 

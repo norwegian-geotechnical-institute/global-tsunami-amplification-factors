@@ -15,14 +15,14 @@ except:
     sys.exit()
 
 
-mainfolder="/home/sgl/projects/global-tsunami-amplification-factors/calculate_AF"
+mainfolder="/home/sylfest/projects/global-tsunami-amplification-factors/calculate_AF"
 #put your profiels here:
-profiles_folder=os.path.join(mainfolder,"profiles")
+profiles_folder=os.path.join("/home/sylfest/projects/modify_profiles_ampfact/profiles_AF")
 #name pattern of filenames (profiles)
-pattern=r"prof_id([0-9]+)"  #pattern of file with depth profile
-profname_stem="prof_id"
+pattern=r"id([0-9]+).txt"  #pattern of file with depth profile
+profname_stem="id"
 #format of numbering
-id_pattern="{:04d}"
+id_pattern="{:05d}"
 #must be unchanged:
 periodes=[120,200,300,600,1000,1800,3600] 
 #simulation results are put here:
