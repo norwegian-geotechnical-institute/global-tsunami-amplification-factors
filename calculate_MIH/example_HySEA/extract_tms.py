@@ -1,7 +1,7 @@
 import netCDF4
 import numpy as np
 #read in netcdf
-file = netCDF4.Dataset("result_id16952_ts.nc", 'r')
+file = netCDF4.Dataset("result_ts.nc", 'r')
 string=""
 for f in file.variables.keys():
     string+=f+" "

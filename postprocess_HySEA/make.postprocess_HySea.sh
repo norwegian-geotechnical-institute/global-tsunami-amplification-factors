@@ -1,3 +1,5 @@
+#apt-get -y install g++
+#apt-get -y install libnetcdf-dev
 OTH=./share
 NETCDF_INCLUDE=/usr/include
 NETCDF_LIB=/usr/lib
