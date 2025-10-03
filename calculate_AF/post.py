@@ -31,7 +31,7 @@ data={}
 fil=infofile
 for line in open(fil,'r').readlines()[1:]:
     line=line.strip().split()
-    print("infofile",line)
+    #print("infofile",line)
     #try:
     id=int(line[0])
     id="%04d" %id
@@ -49,15 +49,13 @@ outfile.write("#global_id lon lat lead 120 200 300 600 1000 1800 3600 lead  120 
 count=0
 counterr=0
 for d in sorted(os.listdir(simdir)):
-    print("dir1:",d)
     dd=os.path.join(simdir,d)
-    print(dd)
     m=re.search(pattern,d)
     if m:
         pass
     else:
         continue
-    print("match",pattern,d)
+    #print("match",pattern,d)
     #for f in sorted(os.listdir(dd)):
     found=False
     #print f
@@ -72,7 +70,7 @@ for d in sorted(os.listdir(simdir)):
             
     #skip point if not in data
     if idntot not in data:
-        print("not in data",idntot)
+        #print("not in data",idntot)
         continue
     
     #print "dir2:",f
@@ -119,7 +117,7 @@ for d in sorted(os.listdir(simdir)):
     #    break
 outfile.close()
 
-print("Counted errors:",counterr,count)
+print(f"Counted errors: {counterr} errors out of {count} AF simulations")
 
 #errorlog: wich hazardpoints is without amp.fact.
 outmissing=open("missing" ,'w')
