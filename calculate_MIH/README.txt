@@ -4,7 +4,7 @@ Surface elevation time series are extracted at designated offshore Points of Int
 
 1. Calculating MIH from a single time series / POI
     Each time series in an ascii txt file should contain two columns: time [sec] and surface elevation [m].
-    a) Use the script calculate_MIH_general.py. An example dataset and usage are provided in the main section at the end of the file.
+    a) Use the script calculate_MIH_general.py. Change paths etc. in the main section to match the location of the files in your system. An example dataset and usage are provided in the main section at the end of the file.
     b) Run the script using: python calculate_MIH_general.py
     c) Results will be printed to the screen.
     d) To process multiple POIs, modify the script to loop through several time series, redirect output to a file, and apply custom amplification factors (see the calculate_AF folder).
@@ -17,8 +17,8 @@ Surface elevation time series are extracted at designated offshore Points of Int
         - This will generate result_ts.nc.offshore.txt with waveforms and offshore heights.
         - Return to the root folder: cd ..
     c) Run calculate_MIH_HySEA.py to compute MIH for all POIs.
+        - Modify paths in main-section to match the location of files in your system.
         - Output will be saved to example_HySEA/calculated_MIH_HySEA.txt
-        - Modify the script’s main section to adapt it to your own HySEA simulations and amplification factors.
         - Required: example_HySEA/result_ts.nc_id.txt, which maps POI IDs to amplification factors and locations. The first line must indicate the number of time series in the HySEA run.
 
 3. Running HySEA from scratch with precomputed global amplification factors
