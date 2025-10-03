@@ -1,7 +1,7 @@
 # global-tsunami-amplification-factors
 Global tsunami amplification factors used for estimation of tsunami run-up, based on wave input from offshore mariograms. By extracting the height of the heighest wave from a given mariogram, you will find a proper amplification factor for estimate the tsunami run-up based on the shape (leading trough - negative polarity named "neg" og leading peak - positive polarity "pos") and the wave periode (120-3600s). See documentation in the paper Glimsdal_etal_ampfactos_paper.pdf.
 
-In release v3.0.0 software for both calculating your own amplification factors (folder calculate_AF) and extracting MIH from your own simulations (folder calculate_MIH) including tools for HySEA is now added.
+In release v3.0.0 software for both calculating your own amplification factors (folder calculate_AF) and extracting MIH from your own simulations (folder calculate_MIH) including tools for HySEA is now added. Check folders for example files and README.txt files for instructions. 
 
 In the file ampfactors/global_ampf_v04.txt there is a collection of  amplification factors at totally 17841 points globally. The amplification factors are produced based on wave simulations along transects on local bathymetry, mostly on idealized profiles. Each line of the file contain all information for a given point of the form:
 
