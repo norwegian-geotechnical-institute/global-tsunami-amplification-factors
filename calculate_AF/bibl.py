@@ -225,11 +225,11 @@ def run(hpt,ampf_depth,periodes,nr,prof,folder,count,problem,nosim,eps,unitpulse
         cc=0
         ##########################################################AKY
         #cut at first negative value (starting from deeper part)
-        #while cc<no-1 and depth[cc]>0:
-        #    cc+=1
+        while cc<no-1 and depth[cc]>0:
+            cc+=1
         
-        #depth=depth[0:cc]
-        #xdepth=xdepth[0:cc]
+        depth=depth[0:cc]
+        xdepth=xdepth[0:cc]
         
         ##########################################################AKY
 
