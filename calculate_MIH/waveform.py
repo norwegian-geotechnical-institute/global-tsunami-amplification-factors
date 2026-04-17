@@ -255,6 +255,7 @@ def waveform(time,eta,out,plot_dir,treshold=0.05,plot=False,quiet=True, tsample=
                     plt.xlabel("Time [hrs]")
                     plt.ylabel("Surface elevation [m]")
                     txt=f"{plot_dir}/{out}_eta.png"
+                    plt.show()
                     plt.savefig(txt)
                     print(f"\nInspect plot: {txt}")
                     plt.clf()
