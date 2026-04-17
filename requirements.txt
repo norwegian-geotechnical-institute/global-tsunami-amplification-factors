@@ -1,6 +1,4 @@
-Boussinesq_2D_python_based.egg==info
 matplotlib==3.10.6
-netCDF4==1.7.1.post2
 netCDF4==1.7.2
 numpy==2.3.3
 scipy==1.16.2
