@@ -5,7 +5,7 @@
 #import netCDF4
 import numpy as np
 import matplotlib, os
-matplotlib.use('Agg') # Use non-interactive backend to be able to run outside main thread
+#matplotlib.use('Agg') # Use non-interactive backend to be able to run outside main thread
 import matplotlib.pyplot as plt
 from statsmodels.nonparametric.smoothers_lowess import lowess
 from scipy.signal import find_peaks
@@ -14,8 +14,7 @@ from scipy.signal import find_peaks
 
 
 
-def waveform(time,eta,out,plot_dir,treshold=0.05,plot=False,quiet=True):
-    #plotdir=f"test_plot"
+def waveform(time,eta,out,plot_dir,treshold=0.05,plot=False,quiet=True, tsample=30):
     if not os.path.isdir(plot_dir) and plot:
         os.mkdir(plot_dir)
     period,hmax=-1.0,-1.0
@@ -23,7 +22,7 @@ def waveform(time,eta,out,plot_dir,treshold=0.05,plot=False,quiet=True):
     polarity="neg"
     ts_sampl=t[1]-t[0]  #sampling of time-series in seconds
     #convert to about 30 sec sampling:
-    corr_sampl=int(np.ceil(30/ts_sampl))
+    corr_sampl=int(np.ceil(tsample/ts_sampl))
     if corr_sampl>1:
         t=t[::corr_sampl]
         eta=eta[::corr_sampl]
@@ -231,7 +230,7 @@ def waveform(time,eta,out,plot_dir,treshold=0.05,plot=False,quiet=True):
                 # peak is larger than a given threshold, let say 0.2
                 polratio=np.abs(yiT1)/hmax
                 
-                polarity="neg"
+                polarity="pos"
                 if polratio>0.2 and yiT1<0 and no_pos_peaks==0:
                     polarity="neg"
                 elif polratio<0.2 and no_pos_peaks==0:
@@ -247,7 +246,7 @@ def waveform(time,eta,out,plot_dir,treshold=0.05,plot=False,quiet=True):
                     plt.stem([t[ihmax]/3600],[hmax],linefmt='ko--',markerfmt='ko')
                     plt.stem([iT1/3600],[yiT1],linefmt='ko--',markerfmt='ko')
                     plt.plot(t/3600,ts,label="mariogram")
-                    plt.xlim([(t[ihmax]-5400)/3600,(t[ihmax]+5400)/3600])
+                    plt.xlim([max(t[0]/3600,(t[ihmax]-5400)/3600),min(t[-1]/3600,(t[ihmax]+5400)/3600)])                    
                     cmd="Periode:"+str(int(period))+"s "
                     cmd+=f" hmax: {hmax:.2f} m "
                     cmd+=f" polarity: {polarity}" 

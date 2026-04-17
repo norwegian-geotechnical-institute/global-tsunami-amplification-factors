@@ -113,10 +113,9 @@ def interp_ampfact(inper: float, per: list, af: dict):
 
 
 
-def computeMIH(AF_file: str, tms_file: str, tms_id_file: str, results_file: str) -> None:
+def computeMIH(af: dict, tms_file: str, tms_id_file: str, results_file: str) -> None:
 
-    #read in ampfactors
-    af=readAF(AF_file)
+    #dictionary for ampfacts is in af
     
     ###################################################################
     #
@@ -156,8 +155,9 @@ def computeMIH(AF_file: str, tms_file: str, tms_id_file: str, results_file: str)
 #####################################################################
 
 if __name__=="__main__":
-    ampfact="../ampfactors/global_ampf_v04.txt"           #corresponding factors for POIs 
+    ampfact="../ampfactors/global_ampf_v04.txt" 
+    af=readAF(ampfact)          #corresponding factors for POIs 
     tms_file="example_HySEA/result_ts.nc"                 #output from HySEA, location of POIs from ampfact
     tms_id_file="example_HySEA/result_ts.nc_id.txt"       #input id file, location of POIs in HySEA with corresponding id
     out_results="example_HySEA/calculated_MIH_HySEA.txt"  #name of outputfile
-    computeMIH(ampfact,tms_file, tms_id_file, out_results)
+    computeMIH(af,tms_file, tms_id_file, out_results)

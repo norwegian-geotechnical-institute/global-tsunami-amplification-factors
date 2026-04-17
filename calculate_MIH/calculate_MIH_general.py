@@ -1,13 +1,10 @@
 #!/usr/bin/python3
 
-import subprocess
-import netCDF4
-import os
 import numpy as np
 import waveform
 from scipy import interpolate
 
-def tms(tms_file: str, af: dict, af_id: str, plot: bool, plot_dir: str, plot_name: str="out"):
+def tms(tms_file: str, af: dict, af_id: str, plot: bool, plot_dir: str, plot_name: str="out",tsample: int=30):
     arr=np.loadtxt(tms_file)
     e=arr[:,1]
     time=arr[:,0]
@@ -17,7 +14,7 @@ def tms(tms_file: str, af: dict, af_id: str, plot: bool, plot_dir: str, plot_nam
     #find id
     print(f"Prosessing mariogram from {tms_file}")
     #extract periode, polarity and height 
-    period,hmax,polarity=waveform.waveform(time,e,plot_name,plot_dir,treshold=0.05,plot=plot,quiet=True)
+    period,hmax,polarity=waveform.waveform(time,e,plot_name,plot_dir,treshold=0.05,plot=plot,quiet=True, tsample=tsample)
 
     #extract/interp af
     if period<0.0: 
@@ -78,13 +75,13 @@ def interp_ampfact(inper: float, per: list, af: dict):
 
 
 
-def computeMIH(ampfact_file: str, ampfact_id: str, tms_file: str, plot: bool=False, plot_name: str="", plot_dir: str="") -> None:
+def computeMIH(ampfact_file: str, ampfact_id: str, tms_file: str, plot: bool=False, plot_name: str="", plot_dir: str="", tsample: int=30) -> None:
 
     #read in ampfactors
     af=readAF(ampfact_file)
     # extract amp.factor based on wave forms (polarity and periode) 
     # and offshore surface elevation, and calculate MIH
-    results=tms(tms_file, af, ampfact_id, plot, plot_dir, plot_name)   
+    results=tms(tms_file, af, ampfact_id, plot, plot_dir, plot_name,tsample=30)   
 
 
 #####################################################################
@@ -96,6 +93,7 @@ def computeMIH(ampfact_file: str, ampfact_id: str, tms_file: str, plot: bool=Fal
 if __name__=="__main__":
     ampfact="../ampfactors/global_ampf_v04.txt"    #table for amplification factors, either using this global set, or calculating your own table from depth profiles
     tms_file="example_general/tms_00500.txt"       #surface elevation as function of time (sec), two columns ascii file, with time[s] and surf.elev[m]
+    tms_file="example_general/spletaD4_m.txt"
     ampfact_id="id03700"                           #corresponding id in ampfact-file above
     plot_dir="plot"
     plot_name="check"
